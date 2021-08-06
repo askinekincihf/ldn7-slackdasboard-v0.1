@@ -1,0 +1,130 @@
+/* ALL FRONT END */
+* {
+	font-family: monospace;
+}
+
+/* body {
+	background-image: url("slack_bg.png");
+	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-position: 50% 50%;
+} */
+
+.container {
+	/* height: 100%; */
+	margin: auto;
+	/* margin-left: 15%;
+	margin-right: 25%; */
+	width: 70%;
+}
+
+/* I don't think we are using it */
+.message {
+	color: blue;
+}
+
+.username {
+	width: 100%;
+	text-align: center;
+	font-size: 50px;
+}
+
+/* HOME SECTION */
+.header {
+	padding: 20px;
+	font-family: "Nunito", sans-serif;
+	color: white;
+	text-align: left;
+	font-size: 1em;
+	font-weight: bold;
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0px 10px 30px 10px;
+}
+
+.logo {
+	margin-left: 50px;
+}
+
+.logo.large {
+	height: auto;
+	width: 40%;
+}
+
+.logo.small {
+	width: 200px;
+	height: 120px;
+}
+
+.userDetails {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0px 10px 30px 10px;
+}
+
+.userStats {
+	font-size: 28px;
+	font-family: "Nunito", sans-serif;
+	padding-top: 10px;
+}
+
+.profilePic {
+	height: 200px;
+	padding: 20px;
+}
+
+/* TABLE */
+.table-color {
+	background-color: #cfe3f1;
+	margin: auto;
+	width: 90%;
+}
+
+main {
+	background-image: url("slack_bg.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+}
+
+.linkButtons,
+.linkButtons button {
+	width: 100%;
+	height: 50px;
+	margin-top: 0.5rem;
+	align-self: center;
+	font-size: 25px;
+}
+
+.linkButtons:hover,
+.linkButtons button:hover {
+	background-color: #dbd801e3;
+}
+
+.blueButton {
+	background-color: #0dbbfd;
+}
+
+.greenButton button {
+	background-color: #24b873;
+}
+
+.dropdown-menu.show {
+	width: 100%;
+	align-self: center;
+	font-size: 25px;
+	text-align: center;
+}
+
+/* CHART */
+
+.chart {
+	width: 500px;
+	margin-top: 10%;
+	margin-left: 20%;
+	margin-bottom: 10%;
+}

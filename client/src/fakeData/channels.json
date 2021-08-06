@@ -1,0 +1,12 @@
+[
+	{
+		"name": "channel a",
+		"description": "a description",
+		"users": ["user_1", "user_2"]
+	},
+	{
+		"name": "channel b",
+		"description": "another description",
+		"users": ["user_2", "user_3"]
+	}
+]
