@@ -7,18 +7,18 @@ const SingleUserChart = (props) => {
 			datasets: [
 				{
 					label: "Messages",
-					backgroundColor: "rgba(255,99,132,0.2)",
-					borderColor: "rgba(255,99,132,1)",
+					backgroundColor: "green",
+					borderColor: "green",
 					borderWidth: 1,
-					hoverBackgroundColor: "rgba(255,99,132,0.4)",
-					hoverBorderColor: "rgba(255,99,132,1)",
+					hoverBackgroundColor: "lightGreen",
+					hoverBorderColor: "lightGreen",
 					data: props.messagesDataSet,
 				},
 
 				{
 					label: "Reactions",
-					backgroundColor: "rgba(155,231,91,0.2)",
-					borderColor: "rgba(255,99,132,1)",
+					backgroundColor: "orange",
+					borderColor: "orange",
 					borderWidth: 1,
 					hoverBackgroundColor: "rgba(255,99,132,0.4)",
 					hoverBorderColor: "rgba(255,99,132,1)",
@@ -36,7 +36,7 @@ const SingleUserChart = (props) => {
 	};
 	return (
 		<div className="chart">
-			<Bar data={state.data} options={options} />
+			<Line data={state.data} options={options} />
 		</div>
 	);
 };
