@@ -1,9 +1,9 @@
-import { Bar } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 
-const SingleChannelChart = (props) => {
+const SingleUserChart = (props) => {
 	const state = {
 		data: {
-			labels: ["Current Week", "Previous Week"],
+			labels: props.label,
 			datasets: [
 				{
 					label: "Messages",
@@ -41,4 +41,4 @@ const SingleChannelChart = (props) => {
 	);
 };
 
-export default SingleChannelChart;
+export default SingleUserChart;

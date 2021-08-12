@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Table } from "reactstrap";
 import TableHead from "./TableHead";
 import TableRow from "./TableRow";
-import Headers from "./Headers";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 const Channels = () => {
 	const [channelList, setChannelList] = useState([]);
@@ -27,20 +28,18 @@ const Channels = () => {
 
 	return (
 		<main>
-			<div className="container">
-				<Headers size="small" />
-				{/* <Table responsive className="table table-color table-bordered"></Table> */}
-				<Table hover className="table">
-					<thead className="text-center">
-						<TableHead />
-					</thead>
-					<tbody className="text-center">
-						{channelList.map((channel, index) => (
-							<TableRow channel={channel} key={index} />
-						))}
-					</tbody>
-				</Table>
-			</div>
+			<NavBar />
+			<Table borderless hover className="table" responsive>
+				<thead className="text-center">
+					<TableHead />
+				</thead>
+				<tbody className="text-center">
+					{channelList.map((channel, index) => (
+						<TableRow channel={channel} key={index} />
+					))}
+				</tbody>
+			</Table>
+			<Footer />
 		</main>
 	);
 };

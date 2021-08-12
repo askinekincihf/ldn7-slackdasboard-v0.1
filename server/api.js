@@ -149,7 +149,7 @@ router.post("/dailyStatistic", async (req, res) => {
 	messageInfo.push(repliesMessagesSorted);
 	messageInfo.push(repliesReaction);
 	const result = [].concat.apply([], messageInfo); // messages + reactions + repliesMessages + repliesReactions
-	const aggregateStat = await aggregateData(result);
+	const aggregateStat = await aggregateData(result, numberOfDays);
 	const stat = [].concat.apply([], [].concat.apply([], aggregateStat));
 	insertDataToTable(stat);
 	res.json(stat);
@@ -172,13 +172,13 @@ const insertDataToTable = (newStat) => {
 		.catch((e) => console.error(e));
 };
 
-const aggregateData = async (result) => {
+const aggregateData = async (result, numberOfDays) => {
 	const channelList = await getChannelList();
 	const aggregateStat = channelList.channels.map(async (channel) => {
 		const UsersInfo = await getChannelUser(channel.id);
 		const data = UsersInfo.members.map((user) => {
 			const allDayStat = [];
-			for (let dayDate = 1; dayDate < 30; dayDate++) {
+			for (let dayDate = 1; dayDate <= numberOfDays; dayDate++) {
 				allDayStat.push(calculateDailyStat(result, channel.id, user, dayDate));
 			}
 			return allDayStat;

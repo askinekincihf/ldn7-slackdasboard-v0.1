@@ -4,7 +4,7 @@ const ChannelButton = () => {
 	return (
 		<div>
 			<Button className="linkButtons blueButton" href="/channels">
-				Go to Channels page
+				Get started
 			</Button>{" "}
 		</div>
 	);

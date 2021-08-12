@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Headers from "./Headers";
+import { useParams, useLocation } from "react-router-dom";
+import SingleUserChart from "./SingleUserChart";
+import Footer from "./Footer";
+import NavBar from "./NavBar";
 import "./Home.css";
 // todo: delete when using api
 import notFound from "./unknown_profile.png";
 
 const SingleUser = () => {
-	const [message, setMessage] = useState("?");
-	const [reaction, setReaction] = useState("?");
+	const location = useLocation();
 	const { userId, channelId, userName } = useParams();
+	const [userData, setUserData] = useState(null);
+	const channelData = location.state?.channelData;
+
 	useEffect(() => {
 		fetch(`/api/userSum/${channelId}/${userId}`)
 			.then((res) => {
@@ -18,8 +22,7 @@ const SingleUser = () => {
 				return res.json();
 			})
 			.then((body) => {
-				setMessage(body[1].total_message);
-				setReaction(body[1].total_reaction);
+				setUserData(body.splice(0, 4));
 			})
 			.catch((err) => {
 				console.error(err);
@@ -29,23 +32,32 @@ const SingleUser = () => {
 	return (
 		<main role="main">
 			<div className="container">
-				<Headers size="small" />
+				<NavBar />
 				<div className="username">{userName}</div>
 				<div className="userDetails">
-					<img
+					{/* <img
 						className="profilePic"
 						data-qa="logo"
 						src={notFound}
 						alt="profile pic"
-					/>
-					<div className="userStats">
-						<div>Data for last week</div>
-						<div>Number of posts: {message}</div>
-						<div>Number of reactions: {reaction}</div>
-					</div>
+					/> */}
+					<div className="userStats"></div>
 				</div>
 			</div>
+			<div>
+				{userData ? (
+					<SingleUserChart
+						messagesDataSet={userData.map((message) => message.total_message)}
+						reactionsDataSet={userData.map(
+							(reaction) => reaction.total_reaction
+						)}
+						label={userData.map((week) => `Week ${week.week_no}`)}
+					/>
+				) : null}
+			</div>
+			<Footer />
 		</main>
 	);
 };
+
 export default SingleUser;

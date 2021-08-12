@@ -1,61 +1,90 @@
 /* ALL FRONT END */
+
 * {
-	font-family: monospace;
+	font-family: "Varela Round", serif;
+	box-sizing: border-box;
 }
 
-/* body {
-	background-image: url("slack_bg.png");
-	background-repeat: no-repeat;
-  	background-attachment: fixed;
-  	background-position: 50% 50%;
-} */
-
-.container {
-	/* height: 100%; */
-	margin: auto;
-	/* margin-left: 15%;
-	margin-right: 25%; */
-	width: 70%;
+body {
+	min-height: 200px;
+	margin-bottom: 50px;
+	clear: both;
 }
 
-/* I don't think we are using it */
-.message {
-	color: blue;
+/* NAVBAR */
+
+.navbar {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 40px;
+	right: 0;
+	left: 0;
 }
+
+.nav-item {
+	text-align: center;
+}
+
+.cyf_logo {
+	width: 200px;
+	height: auto;
+}
+
+/* HOME PAGE */
+
+.introMessage {
+	width: 80%;
+	border-radius: 10px;
+	border: solid 3px #eef0ee;
+	border-radius: 40px;
+	margin: 0px auto 30px auto;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.introMessage h3 {
+	font-weight: 1000;
+	margin-bottom: 30px;
+}
+.introMessage h4 {
+	font-weight: lighter;
+	margin-top: 30px;
+}
+
+/* BUTTON ON HOME PAGE */
+
+.linkButtons,
+.linkButtons button {
+	width: 60%;
+	height: 50px;
+	margin: 5px auto 20px auto;
+	border-radius: 20px;
+	border: solid 3px #0a5503;
+	align-self: center;
+	font-size: 25px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.linkButtons:hover,
+.linkButtons button:hover {
+	background-color: #b1f778e3;
+	color: #0a5503;
+}
+
+.blueButton {
+	background-color: #1ac00b;
+}
+
+/* */
 
 .username {
 	width: 100%;
 	text-align: center;
 	font-size: 50px;
-}
-
-/* HOME SECTION */
-.header {
-	padding: 20px;
-	font-family: "Nunito", sans-serif;
-	color: white;
-	text-align: left;
-	font-size: 1em;
-	font-weight: bold;
-	width: 90%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin: 0px 10px 30px 10px;
-}
-
-.logo {
-	margin-left: 50px;
-}
-
-.logo.large {
-	height: auto;
-	width: 40%;
-}
-
-.logo.small {
-	width: 200px;
-	height: 120px;
 }
 
 .userDetails {
@@ -77,49 +106,6 @@
 	padding: 20px;
 }
 
-/* TABLE */
-.table-color {
-	background-color: #cfe3f1;
-	margin: auto;
-	width: 90%;
-}
-
-main {
-	background-image: url("slack_bg.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: auto;
-}
-
-.linkButtons,
-.linkButtons button {
-	width: 100%;
-	height: 50px;
-	margin-top: 0.5rem;
-	align-self: center;
-	font-size: 25px;
-}
-
-.linkButtons:hover,
-.linkButtons button:hover {
-	background-color: #dbd801e3;
-}
-
-.blueButton {
-	background-color: #0dbbfd;
-}
-
-.greenButton button {
-	background-color: #24b873;
-}
-
-.dropdown-menu.show {
-	width: 100%;
-	align-self: center;
-	font-size: 25px;
-	text-align: center;
-}
-
 /* CHART */
 
 .chart {
@@ -128,3 +114,87 @@ main {
 	margin-left: 20%;
 	margin-bottom: 10%;
 }
+
+/* CHANNELS PAGE */
+
+.slack_logo {
+	width: 20px;
+	height: auto;
+	margin-right: 10px;
+}
+
+.users_icon {
+	width: 27px;
+	height: auto;
+	margin-right: 15px;
+}
+
+/* TABLE ON CHANNELS PAGE */
+
+.table {
+	margin: auto;
+	width: 80%;
+}
+
+.table th {
+	width: 200px;
+	padding: 10px;
+}
+
+.table td {
+	width: 50px;
+	padding: 10px;
+}
+
+.arrow {
+	width: 15px;
+	height: auto;
+}
+
+/* TABLE ON SINGLE CHANNEL PAGE */
+
+.channelTable {
+	border: solid 2px black;
+	margin-top: 20px;
+}
+
+.thickBottomBorder {
+	border-bottom: solid 2px black;
+}
+
+.thickRightBorder {
+	border-right: solid 2px black;
+}
+
+/* SINGLE USER DATA */
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+/* FOOTER */
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 5px;
+	background-color: #080808;
+	margin-top: 1rem;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+/* DROPDOWN COMPONENT FOR FUTURE RELEASES */
+
+/* .dropdown-menu.show {
+	width: 100%;
+	align-self: center;
+	font-size: 25px;
+	text-align: center;
+} */
